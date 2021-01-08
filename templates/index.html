@@ -1,3 +1,35 @@
-<html>
-    <h1> this is index.html</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+  </head>
+  <body>
+    <div class="container">
+      <h3>Power Predictions</h3>
+    </div>
+
+    <!-- Form for inputting speed-->
+    <div class="container">
+      <form action="/send" method="POST">
+        <label for="Speed">Input Speed</label>
+		<br></br>
+        <input
+          type="text"
+          placeholder="Speed Here"
+          name="speedNum"
+        />
+
+   
+		<br></br>
+        <input type="submit" value="Predict Power" id="predict_btn" />
+        <br />
+		<br />
+
+        <div>
+          Power: {{ sum }}
+        </div>
+      </form>
+    </div>
+  </body>
 </html>

@@ -1,13 +1,25 @@
-# flask for web app.
-import flask as fl
-# numpy for numerical work.
+# flask to create web app
+import flask 
 import numpy as np
-from flask import render_template
+from flask import render_template, request
+import tensorflow as tf
+from tensorflow import keras
 
 # Create a new web app.
-app = fl.Flask(__name__)
+app = flask.Flask(__name__)
 
-# Add root route.
+# home route
 @app.route("/")
 def home():
   return render_template('index.html')
+
+# clicking predict button
+@app.route("/send",  methods=['POST'])
+def send(sum=sum):
+  if request.method == 'POST':
+    # gets the speed
+    speed = request.form['speedNum'] 
+
+
+    sum = float(speed)*3 
+    return render_template('index.html', sum=sum)
